@@ -5,6 +5,7 @@
   "htmlWhitespaceSensitivity": "css",
   "insertPragma": false,
   "embeddedLanguageFormatting": "auto",
+  "singleQuote": true,
   "jsxSingleQuote": false,
   "semi": true,
   "useTabs": false,
