@@ -1,30 +1,40 @@
 {
   "compilerOptions": {
+    "target": "es2017",
+    "lib": [
+      "dom",
+      "es2017"
+    ],
     "allowJs": true,
-    "alwaysStrict": true,
-    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "lib": ["dom", "es2017"],
+    "alwaysStrict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
-    "noEmit": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "target": "es2017",
-    "outDir": "docs"
+    "outDir": "docs",
+    "incremental": true
   },
-  "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
   "typedocOptions": {
     "out": "docs/typedoc",
     "mode": "file",
-    "name": "Resume Next.js: TypeDoc",
+    "name": "Portfolio Next.js: TypeDoc",
     "externalPattern": "!**/I*.ts"
   }
 }
