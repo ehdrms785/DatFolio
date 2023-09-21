@@ -2,7 +2,7 @@ import { CSSProperties } from 'react';
 import { css } from 'styled-components';
 
 /** Style 추론용 */
-type TStyleKey = 'global' | 'footer';
+type TStyleKey = 'global' | 'blue' | 'gray' | 'footer';
 
 export const Style: Record<TStyleKey, CSSProperties> = {
   global: {
@@ -11,6 +11,15 @@ export const Style: Record<TStyleKey, CSSProperties> = {
     wordBreak: 'keep-all',
     lineHeight: 1.8,
     backgroundColor: 'white',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  },
+  blue: {
+    color: '#3c78d8',
+  },
+
+  gray: {
+    color: 'gray',
   },
   footer: {},
 };

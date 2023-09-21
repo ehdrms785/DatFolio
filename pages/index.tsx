@@ -7,6 +7,9 @@ import { FadeInOnSlide } from '../components/common/FadeInOnSlide';
 import { NextSeo } from 'next-seo';
 import { Profile } from '../components/profile';
 import { Introduce } from '../components/introduce';
+import { Skill } from '../components/skill';
+import { Project } from '../components/project';
+import { LinerTitle } from '../components/common/LinerTitle';
 
 const Home: NextPage = () => {
   return (
@@ -22,10 +25,19 @@ const Home: NextPage = () => {
         <FadeInOnSlide>
           <Introduce.Component payload={Payload.introduce} />
         </FadeInOnSlide>
-
         {/* 스킬 */}
+        <FadeInOnSlide>
+          <Skill.Component payload={Payload.skill} />
+        </FadeInOnSlide>
 
         {/* 프로젝트 */}
+        <FadeInOnSlide>
+          <Container style={{ marginBottom: 300, marginTop: 300, textAlign: 'center' }}>
+            <LinerTitle>프로 젝트</LinerTitle>
+          </Container>
+        </FadeInOnSlide>
+
+        <Project.Component payload={Payload.project} />
 
         {/* Footer */}
       </Container>

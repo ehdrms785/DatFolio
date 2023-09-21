@@ -25,7 +25,6 @@ function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
 
 const TitleSection = styled.section<{ src: string }>`
   height: 100vh;
-  width: 90%;
   max-width: 1500px;
   margin-bottom: 6rem;
   background-image: url(${({ src }) => src});
@@ -51,14 +50,14 @@ const MainTitle = styled.h1`
     padding-right: 3rem;
     font-size: 1.5rem;
     color: #333;
-    background-color: #fff;
+    /* background-color: #fff; */
   }
 
   .name {
     padding: 1.5rem 2.5rem;
     padding-right: 4rem;
     color: #000;
-    background-color: #fff;
+    /* background-color: #fff; */
     font-size: 15vmin;
     margin-bottom: 0;
   }

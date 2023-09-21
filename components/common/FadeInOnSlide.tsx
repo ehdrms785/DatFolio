@@ -11,7 +11,7 @@ export const FadeInOnSlide = ({ children }: PropsWithChildren) => {
       const element = ref.current;
       const { top } = element?.getBoundingClientRect();
 
-      if (top < scrollY + innerHeight * 0.6) {
+      if (top < scrollX + innerHeight * 0.6) {
         setOpacity(1);
         window.removeEventListener('scroll', onScroll);
       } else {
