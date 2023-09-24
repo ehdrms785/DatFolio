@@ -1,4 +1,7 @@
 import { StaticImageData } from 'next/image';
+import { ImageSize } from '../common/ImageSize';
+
+import { Device } from '../../type';
 
 export declare namespace IProject {
   export interface Payload {
@@ -14,5 +17,11 @@ export declare namespace IProject {
     description: string;
     /** ### 기술들 */
     skills: string[];
+    /** ### 이미지 크기 */
+    size?: ImageSize;
+    /** ### 링크 타이틀 */
+    link?: string;
+    /** ### 프로덕션 타입 (web | app) */
+    device?: Device;
   }
 }

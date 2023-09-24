@@ -1,64 +1,43 @@
 import { PropsWithChildren } from 'react';
 import { IProfile } from './IProfile';
 import styled from 'styled-components';
+import { maxWidthWithAutoMargin } from '../common/Style';
+import { Paragraph } from '../common/Paragraph';
+import { LinkButton } from '../common/LinkButton';
+import { SubTitle } from '../common/SubTitle';
 
 type Payload = IProfile.Payload;
 
-export const Profile = {
-  Component: ({ payload }: PropsWithChildren<{ payload: Payload }>) => {
-    return Component({ payload });
-  },
+export const Profile = ({ payload }: PropsWithChildren<{ payload: Payload }>) => {
+  return (
+    <Section style={{ marginBottom: 200, marginTop: 300 }}>
+      <Container>
+        <S_SubTitle>{payload.title}</S_SubTitle>
+      </Container>
+
+      <Paragraph>{payload.description}</Paragraph>
+
+      <Container>
+        <LinkButton href={`mailto:${payload.email}`} style={{ marginBottom: 10 }}>
+          {payload.email}
+        </LinkButton>
+        <br />
+        <LinkButton href={`tel:${payload.phone.replace(/-/g, '')}`}>
+          Phone: {payload.phone}
+        </LinkButton>
+      </Container>
+    </Section>
+  );
 };
 
-function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
-  const { image, title, name } = payload;
-  return (
-    <TitleSection src={image.src}>
-      <MainTitle>
-        <span className="title">{title}</span>
-        <br />
-        <span className="name">{name}</span>
-      </MainTitle>
-    </TitleSection>
-  );
-}
-
-const TitleSection = styled.section<{ src: string }>`
-  height: 100vh;
-  max-width: 1500px;
-  margin-bottom: 6rem;
-  background-image: url(${({ src }) => src});
-  background-size: auto 100vmin;
-  background-repeat: no-repeat;
-  background-position: right bottom;
+const Section = styled.section`
+  margin-bottom: 8rem;
+`;
+const Container = styled.div`
+  ${maxWidthWithAutoMargin}
+  width: 90%;
 `;
 
-const MainTitle = styled.h1`
-  position: sticky;
-  top: 3rem;
-  padding-left: 1rem;
-  font-size: 3rem;
-  margin: 0;
-
-  span {
-    display: inline-block;
-    margin: 0.5rem auto;
-  }
-
-  .title {
-    padding: 1rem 2rem;
-    padding-right: 3rem;
-    font-size: 1.5rem;
-    color: #333;
-    /* background-color: #fff; */
-  }
-
-  .name {
-    padding: 1.5rem 2.5rem;
-    padding-right: 4rem;
-    color: #000;
-    /* background-color: #fff; */
-    font-size: 15vmin;
-    margin-bottom: 0;
-  }
+const S_SubTitle = styled(SubTitle)`
+  width: 70%;
 `;

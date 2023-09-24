@@ -11,7 +11,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ videoUrl }) => {
     border: `1px solid gray`,
     borderRadius: '1.04rem',
     boxShadow: '20px 0px 10px rgba(0, 0, 0, 0.3)',
-    transform: 'perspective(2000px) rotateY(-12deg)'
+    transform: 'perspective(2000px) rotateY(-12deg)',
   };
 
   return (

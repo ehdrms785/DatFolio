@@ -18,7 +18,7 @@ export const LinerTitle = styled.h2`
   z-index: 1;
   overflow: hidden;
   transition: padding 0.3s, border-radius 0.3s;
-
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5); 
   &::before {
     content: '';
     position: absolute;

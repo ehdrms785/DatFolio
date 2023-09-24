@@ -10,13 +10,7 @@ import styled from 'styled-components';
 
 type Payload = ISkill.Payload;
 
-export const Skill = {
-  Component: ({ payload }: PropsWithChildren<{ payload: Payload }>) => {
-    return Component({ payload });
-  },
-};
-
-function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
+export const Skill = ({ payload }: PropsWithChildren<{ payload: Payload }>) => {
   return (
     <div className="pt-5">
       <EmptyRowCol>
@@ -34,7 +28,7 @@ function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
       </EmptyRowCol>
     </div>
   );
-}
+};
 
 function createTooltip(content?: string) {
   if (!content) {

@@ -10,6 +10,7 @@ import { Introduce } from '../components/introduce';
 import { Skill } from '../components/skill';
 import { Project } from '../components/project';
 import { LinerTitle } from '../components/common/LinerTitle';
+import { Footer } from '../components/footer';
 
 const Home: NextPage = () => {
   return (
@@ -21,26 +22,25 @@ const Home: NextPage = () => {
       </Head>
       <Container style={Style.global}>
         {/* 간단 소개*/}
-        <Profile.Component payload={Payload.profile} />
-        <FadeInOnSlide>
-          <Introduce.Component payload={Payload.introduce} />
-        </FadeInOnSlide>
+        <Introduce payload={Payload.introduce} />
         {/* 스킬 */}
         <FadeInOnSlide>
-          <Skill.Component payload={Payload.skill} />
+          <Skill payload={Payload.skill} />
         </FadeInOnSlide>
-
         {/* 프로젝트 */}
         <FadeInOnSlide>
-          <Container style={{ marginBottom: 300, marginTop: 300, textAlign: 'center' }}>
+          <Container style={{ marginTop: 300, marginBottom: 200, textAlign: 'center' }}>
             <LinerTitle>프로 젝트</LinerTitle>
           </Container>
         </FadeInOnSlide>
-
-        <Project.Component payload={Payload.project} />
-
-        {/* Footer */}
+        <Project payload={Payload.project} />
+        {/* 포부 */}
+        <FadeInOnSlide>
+          <Profile payload={Payload.profile} />
+        </FadeInOnSlide>
       </Container>
+      {/* Footer */}
+      <Footer />
     </>
   );
 };

@@ -42,8 +42,7 @@ function createCalculatedSkillItems(items: ISkill.Item[]) {
               {skills.map((skill, skillIndex) => {
                 return (
                   <li key={skillIndex.toString()}>
-                    {createBadge(skill.level)}
-                    {skill.title}
+                    {createBadge(skill.level)} {skill.title}
                   </li>
                 );
               })}
