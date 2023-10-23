@@ -31,9 +31,7 @@ const project: IProject.Payload[] = [
     image: hansolImage,
     title: 'ANBOX',
     subTitle: '박스/포장재 이커머스 플랫폼',
-    description: `국내 2위 친환경 박스/포장재 기업 한솔비에스의 E-Commerce 전면 리뉴얼 프로젝트에 참여했습니다. 주문제작, 고객센터, 주문/결제 파트를 전담했고 이후에 B2B 정기구독, 주문/배송을 관리하는 백오피스를 추가로 제작하였습니다.
-    
-    CI/CD 자동화를 포함한 프론트엔드 개발을 진행하였고 Convention 문서화 및 협업툴을 활용한 스케줄링 관리 등 팀 매니징을 담당하였습니다.`,
+    description: `국내 2위 친환경 박스/포장재 기업 한솔비에스의 E-Commerce 전면 리뉴얼 프로젝트에 참여했습니다. 주문제작, 고객센터, 주문/결제 파트를 담당했고 B2B 정기구독, 주문/배송을 관리하는 백오피스를 추가로 제작하였습니다.`,
     skills: ['React', 'Redux', 'Zustand', 'RESTful API', 'Jenkins'],
     size: { width: '650px' },
     device: 'web',
