@@ -1,6 +1,4 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import Payload from '../payload';
+import type { GetStaticProps, InferGetStaticPropsType } from 'next';
 import { Container } from 'reactstrap';
 import { Style } from '../components/common/Style';
 import { FadeInOnSlide } from '../components/common/FadeInOnSlide';
@@ -12,31 +10,34 @@ import { Project } from '../components/project';
 import { LinerTitle } from '../components/common/LinerTitle';
 import { Footer } from '../components/footer';
 
-const Home: NextPage = () => {
+const Home = ({
+  _global,
+  introduce,
+  skill,
+  project,
+  profile,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
-      <NextSeo {...Payload._global.seo} />
-      <Head>
-        <title>{Payload._global.headTitle}</title>
-        <link rel="shortcut icon" href={Payload._global.favicon.src} />
-      </Head>
+      <NextSeo
+        {..._global.seo}
+        additionalLinkTags={[{ rel: 'icon', href: '/favicon.ico', type: 'image/x-icon' }]}
+      />
+
       <Container style={Style.global}>
-        {/* 간단 소개*/}
-        <Introduce payload={Payload.introduce} />
-        {/* 스킬 */}
+        <Introduce payload={introduce} />
         <FadeInOnSlide>
-          <Skill payload={Payload.skill} />
+          <Skill payload={skill} />
         </FadeInOnSlide>
-        {/* 프로젝트 */}
         <FadeInOnSlide>
           <Container style={{ marginTop: 300, marginBottom: 200, textAlign: 'center' }}>
             <LinerTitle>프로 젝트</LinerTitle>
           </Container>
         </FadeInOnSlide>
-        <Project payload={Payload.project} />
+        <Project payload={project} />
         {/* 포부 */}
         <FadeInOnSlide>
-          <Profile payload={Payload.profile} />
+          <Profile payload={profile} />
         </FadeInOnSlide>
       </Container>
       {/* Footer */}
@@ -46,3 +47,21 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export const getStaticProps: GetStaticProps = async () => {
+  const { _global } = await import('../payload/_global');
+  const introduce = (await import('../payload/introduce')).default;
+  const profile = (await import('../payload/profile')).default;
+  const project = (await import('../payload/project')).default;
+  const skill = (await import('../payload/skill')).default;
+
+  return {
+    props: {
+      _global,
+      introduce,
+      profile,
+      project,
+      skill,
+    },
+  };
+};

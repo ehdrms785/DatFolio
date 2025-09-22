@@ -67,7 +67,6 @@ UI/UX 개발, GraphQL/REST API 연동, FCM, 에러 핸들링 등을 수행했습
     skills: ['Flutter', 'GetX', 'GraphQL', 'Firebase', 'FCM'],
     size: { width: '300px' },
     device: 'app',
-    link: 'https://play.google.com/store/apps/details?id=com.pgcg.monegiApp',
   },
 ];
 
