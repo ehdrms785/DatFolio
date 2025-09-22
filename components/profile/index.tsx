@@ -10,12 +10,14 @@ type Payload = IProfile.Payload;
 
 export const Profile = ({ payload }: PropsWithChildren<{ payload: Payload }>) => {
   return (
-    <Section style={{ marginBottom: 200, marginTop: 300 }}>
+    <Section>
       <Container>
         <S_SubTitle>{payload.title}</S_SubTitle>
       </Container>
 
-      <Paragraph>{payload.description}</Paragraph>
+      <Container style={{ marginTop: '2rem', marginBottom: '2rem' }}>
+        <Paragraph style={{ textAlign: 'left' }}>{payload.description}</Paragraph>
+      </Container>
 
       <Container>
         <LinkButton href={`mailto:${payload.email}`} style={{ marginBottom: 10 }}>
