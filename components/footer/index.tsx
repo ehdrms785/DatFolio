@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Footer: React.FC = () => {
-  return <FooterContainer>Copyright 2023 Daro All rights reserved.</FooterContainer>;
+  return <FooterContainer>Copyright 2025 Daro All rights reserved.</FooterContainer>;
 };
 const FooterContainer = styled.footer`
   text-align: center;
