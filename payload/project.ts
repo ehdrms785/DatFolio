@@ -47,7 +47,7 @@ const project: IProject.Payload[] = [
     device: 'web',
   },
   {
-    image: hansolImage,
+    image: '/hansol.png',
     title: 'ANBOX',
     subTitle: '박스/포장재 이커머스 플랫폼',
     description: `국내 친환경 박스/포장재 기업의 E-Commerce 전면 리뉴얼 프로젝트에 참여했습니다. 주문제작, 고객센터, 주문/결제, 백오피스 등을 담당했습니다.`,
@@ -57,7 +57,7 @@ const project: IProject.Payload[] = [
     link: 'https://www.an.co.kr',
   },
   {
-    image: monegiImage,
+    image: '/monegi.png',
     video: '/monegi_play.mov',
     title: '모내기',
     subTitle: '소비경험 공유 플랫폼',

@@ -1,12 +1,11 @@
-import { StaticImageData } from 'next/image';
 import { ImageSize } from '../common/ImageSize';
 
 import { Device } from '../../type';
 
 export declare namespace IProject {
   export interface Payload {
-    /** ### 메인 이미지 */
-    image?: StaticImageData;
+    /** ### 메인 이미지 src */
+    image?: string;
     /** ### 영상 URL */
     video?: string;
     /** ### 프로젝트 명 */

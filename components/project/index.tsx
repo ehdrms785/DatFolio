@@ -21,7 +21,6 @@ export const Project = ({ payload }: PropsWithChildren<{ payload: Payload }>) =>
 
   return payload?.map((project) => {
     const hasMedia = Boolean(project.image) || Boolean(isClient && project.video);
-
     return (
       <FadeInOnSlide>
         <Section>
@@ -46,7 +45,7 @@ export const Project = ({ payload }: PropsWithChildren<{ payload: Payload }>) =>
             >
               {project.image && (
                 <ProjectImg
-                  src={project.image.src}
+                  src={project.image}
                   width={project?.size?.width}
                   height={project?.size?.height}
                 />
