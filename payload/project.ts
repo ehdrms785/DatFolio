@@ -1,5 +1,3 @@
-import monegiImage from '../public/monegi.png';
-import hansolImage from '../public/hansol.png';
 import { IProject } from '../components/project/IProject';
 
 const project: IProject.Payload[] = [
